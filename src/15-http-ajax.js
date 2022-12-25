@@ -6,15 +6,15 @@ import { of, map, catchError } from 'rxjs';
  * GET Request
  */
 
-// const ditto$ = ajax('https://pokeapi.co/api/v2/pokemon/ditto').pipe(
-//     map( data => data),     // Retorna la data
-//     catchError( error => {
-//         console.log('Error: ', error.message);
-//         return of(error);
-//     })
-// );
+const ditto$ = ajax('https://pokeapi.co/api/v2/pokemon/ditto').pipe(
+    map( data => data),     // Retorna la data
+    catchError( error => {
+        console.log('Error: ', error.message);
+        return of(error);
+    })
+);
 
-// ditto$.subscribe( result => console.log('Result:', result)); 
+ditto$.subscribe( result => console.log('Result:', result)); 
 
 
 /**
